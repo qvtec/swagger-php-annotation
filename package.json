@@ -3,18 +3,26 @@
 	"displayName": "Swagger-PHP Annotation",
 	"description": "Swagger-PHP annotation completion and decorator",
 	"license": "MIT",
-    "publisher": "qvtec3",
-	"version": "1.0.4",
+	"publisher": "qvtec3",
+	"version": "1.0.5",
 	"engines": {
 		"vscode": "^1.56.0"
 	},
 	"categories": [
+		"Programming Languages",
+		"Snippets",
 		"Other"
+	],
+	"keywords": [
+	  "openapi",
+	  "swagger",
+	  "php",
+	  "api"
 	],
 	"activationEvents": [
 		"onLanguage:php"
 	],
-    "icon": "assets/swagger_icon.png",
+	"icon": "assets/icon.png",
 	"main": "./out/extension.js",
 	"contributes": {
 		"configuration": {
