@@ -19,6 +19,7 @@ export function activate(context: vscode.ExtensionContext)
     let indent = new Indent();
 
     vscode.window.onDidChangeActiveTextEditor(editor => {
+        indent.changeActiveTextEditor(editor);
         decorator.changeActiveTextEditor(editor);
     }, null, context.subscriptions);
 

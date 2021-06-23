@@ -7,6 +7,10 @@ export default class Indent
     constructor() {
     }
 
+    public changeActiveTextEditor(editor: vscode.TextEditor | undefined): void {
+        this.activeEditor = editor;
+    }
+
     public changeTextDocument(event: vscode.TextDocumentChangeEvent): void {
         if (this.activeEditor && event.document === this.activeEditor.document) {
             if (this.isNewLine(event)) {
@@ -42,7 +46,7 @@ export default class Indent
             vscode.commands.executeCommand("cursorUp");
             vscode.commands.executeCommand("cursorLineEnd");
         }
-        else if (nextStartString === ')') {
+        else if (nextStartString === ')' || nextStartString === ',') {
             indent = indent.slice(tabSize);
         }
         else if (beforeEndString === '(') {
