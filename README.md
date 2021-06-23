@@ -10,7 +10,7 @@ Swagger-PHP v3.x Annotation extension.
 * Add indent when pressing enter
 * Decorator of swagger-php annotation
 
-![features](https://github.com/qvtec/swagger-php-annotation/tree/main/assets/features.gif?raw=true)
+![features](https://github.com/qvtec/swagger-php-annotation/blob/main/assets/features.gif?raw=true)
 
 ## Requirements
 
