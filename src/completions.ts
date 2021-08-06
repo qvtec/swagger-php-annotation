@@ -2,6 +2,12 @@ import * as vscode from 'vscode';
 
 export default class Completions implements vscode.CompletionItemProvider
 {
+    private type: string = 'OA';
+
+    constructor() {
+        const config: any = vscode.workspace.getConfiguration('completions');
+        this.type = config.get('type');
+    }
 
     public provideCompletionItems(document: vscode.TextDocument, position: vscode.Position): vscode.ProviderResult<vscode.CompletionItem[]>
     {
@@ -37,11 +43,11 @@ export default class Completions implements vscode.CompletionItemProvider
                 let snippet: string = this.getAnnotation("${1:name}", tag.snippet);
                 snippet = snippet.replace(/^(?!(\s\*|\/\*))/gm, "* $1");
                 snippet = snippet.replace(/^\*\s\@/g, "");
+                snippet = snippet.replace(/OA\\/g, this.type + "\\");
 
                 item.insertText = new vscode.SnippetString(snippet);
                 item.commitCharacters = ['('];
                 item.documentation = 'Press `(` to get Swagger-php template';
-                result.push(item);
             });
 
             return result;
@@ -60,6 +66,7 @@ export default class Completions implements vscode.CompletionItemProvider
                 snippet = snippet.replace(/^(?!(\s\*))/gm, "* ###$1");
                 snippet = snippet.replace(/###/gm, indent);
                 snippet = snippet.replace(/^\*\s+\@/g, "");
+                snippet = snippet.replace(/OA\\/g, this.type + "\\");
 
                 item.insertText = new vscode.SnippetString(snippet);
                 item.commitCharacters = ['('];
@@ -108,6 +115,7 @@ export default class Completions implements vscode.CompletionItemProvider
 
         templateString = templateString.replace(/^$/gm, " *");
         templateString = templateString.replace(/^(?!(\s\*|\/\*))/gm, " * $1");
+        templateString = templateString.replace(/OA\\/g, this.type + "\\");
 
         return new vscode.SnippetString(templateString);
     }

@@ -18,26 +18,19 @@ This extension has no dependencies.
 
 ## Extension Settings
 
+* `completions.type`: set 'OA' or 'SWG'
+
+``` json
+"completions.type": {
+    "type": "string",
+    "default": "SWG",
+    "description": "Swagger Version 2.x:SWG, 3.x:OA"
+},
+```
+
 * `decorator.regexes`: set to decoration types
 
 ``` json
-"(// )(@\\w+)": {
-    "decorationType": {
-        "borderWidth": "1px",
-        "borderStyle": "solid",
-        "overviewRulerColor": "red",
-        "backgroundColor": "grey",
-        "light": {
-            "color": "pink",
-            "borderColor": "darkblue"
-        },
-        "dark": {
-            "color": "lightyellow",
-            "borderColor": "lightblue"
-        },
-        "fontWeight": "bold"
-    }
-},
 "(?:\\* )(@OA\\\\\\w+)": {
     "decorationType": {
         "light": { "color": "#cb85cc" },

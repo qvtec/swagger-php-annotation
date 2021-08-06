@@ -4,7 +4,7 @@
 	"description": "Swagger-PHP annotation completion and decorator",
 	"license": "MIT",
 	"publisher": "qvtec3",
-	"version": "1.0.5",
+	"version": "1.1.0",
 	"engines": {
 		"vscode": "^1.56.0"
 	},
@@ -27,29 +27,17 @@
 	"contributes": {
 		"configuration": {
 		  "type": "object",
-		  "title": "Decorator - Configuration",
+		  "title": "Swagger-PHP Annotation",
 		  "properties": {
+			"completions.type": {
+			  "type": "string",
+			  "default": "OA",
+			  "description": "Swagger Version 2.x:SWG, 3.x:OA"
+			},
 			"decorator.regexes": {
 			  "type": "object",
 			  "description": "Object mapping regexes to an array of decorations to apply to the capturing groups",
 			  "default": {
-				  "(// )(@\\w+)": {
-					  "decorationType": {
-						  "borderWidth": "1px",
-						  "borderStyle": "solid",
-						  "overviewRulerColor": "red",
-						  "backgroundColor": "grey",
-						  "light": {
-							  "color": "pink",
-							  "borderColor": "darkblue"
-						  },
-						  "dark": {
-							  "color": "lightyellow",
-							  "borderColor": "lightblue"
-						  },
-						  "fontWeight": "bold"
-					  }
-				  },
 				  "(?:\\* )(@OA\\\\\\w+)": {
 					  "decorationType": {
 						  "light": { "color": "#cb85cc" },
