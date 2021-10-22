@@ -54,3 +54,7 @@ This extension has no dependencies.
 ### 1.0.0
 
 Initial release.
+
+### 1.1.1
+
+fix indent

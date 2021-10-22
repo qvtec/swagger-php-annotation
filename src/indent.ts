@@ -64,7 +64,7 @@ export default class Indent
     private isNewLine(event: vscode.TextDocumentChangeEvent): boolean {
         let isNewLine: boolean = false;
         for (const change of event.contentChanges) {
-            let pattern = /^\r\n\s+\*\s/;
+            let pattern = /^(\r\n|\r|\n)\s+\*\s/;
             if (pattern.test(change.text)) {
                 isNewLine = true;
                 break;
