@@ -1,16 +1,18 @@
 # swagger-php-annotation
 
-[![Version](https://img.shields.io/visual-studio-marketplace/v/qvtec3.swagger-php-annotation)](https://marketplace.visualstudio.com/items?itemName=qvtec3.swagger-php-annotation)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/qvtec3.swagger-php-annotation)](https://marketplace.visualstudio.com/items?itemName=qvtec3.swagger-php-annotation)
-[![Rating](https://img.shields.io/visual-studio-marketplace/r/qvtec3.swagger-php-annotation)](https://marketplace.visualstudio.com/items?itemName=qvtec3.swagger-php-annotation)
+[![Version](https://badgen.net/vs-marketplace/v/qvtec3.swagger-php-annotation)](https://marketplace.visualstudio.com/items?itemName=qvtec3.swagger-php-annotation)
+[![Installs](https://badgen.net/vs-marketplace/i/qvtec3.swagger-php-annotation)](https://marketplace.visualstudio.com/items?itemName=qvtec3.swagger-php-annotation)
+[![Stars](https://img.shields.io/github/stars/qvtec/swagger-php-annotation?style=flat)](https://github.com/qvtec/swagger-php-annotation/stargazers)
+[![License](https://img.shields.io/github/license/qvtec/swagger-php-annotation?style=flat)](https://github.com/qvtec/swagger-php-annotation/blob/main/LICENSE)
 
-Swagger-PHP v3.x Annotation extension.
+
+Swagger-PHP v3.x Annotation extension for VS Code.
 
 ## Features
 
-* Completion snippet after /** above a Restful API function (ex. index, store, show, update, destroy)
-* Completion of OpenAPI httpMethod (ex. 'Get','Post','Put','Delete')
-* Completion of OpenAPI tags (ex. 'Parameter','Response','JsonContent','Schema','Items','Property','RequestBody')
+* Completion snippet after `/**` above a Restful API function (ex. index, store, show, update, destroy)
+* Completion of OpenAPI httpMethod (ex. `Get`, `Post`, `Put`, `Delete`)
+* Completion of OpenAPI tags (ex. `Parameter`, `Response`, `JsonContent`, `Schema`, `Items`, `Property`, `RequestBody`)
 * Add indent when pressing enter
 * Decorator of swagger-php annotation
 
@@ -22,14 +24,10 @@ This extension has no dependencies.
 
 ## Extension Settings
 
-* `completions.type`: set 'OA' or 'SWG'
+* `completions.type`: set `OA` (OpenAPI 3.x) or `SWG` (Swagger 2.x)
 
 ``` json
-"completions.type": {
-    "type": "string",
-    "default": "SWG",
-    "description": "Swagger Version 2.x:SWG, 3.x:OA"
-},
+"completions.type": "OA"
 ```
 
 * `decorator.regexes`: set to decoration types

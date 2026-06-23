@@ -4,6 +4,11 @@ All notable changes to the "swagger-php-annotation" extension will be documented
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.1.3] - 2026-06-24
+
+### Added
+- Added MIT LICENSE file
+
 ## [1.1.2] - 2026-06-23
 
 ### Fixed
