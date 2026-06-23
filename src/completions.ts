@@ -18,13 +18,20 @@ export default class Completions implements vscode.CompletionItemProvider
         }
 
         // [/**]
-        if (document.getWordRangeAtPosition(position, /\/\*\*/) !== undefined) {
+        const lineText0: string = document.lineAt(position.line).text;
+        const textBeforeCursor = lineText0.substring(0, position.character);
+        if (/\/\*\*$/.test(textBeforeCursor)) {
             let block = new vscode.CompletionItem("/**", vscode.CompletionItemKind.Snippet);
             block.detail = "Swagger-PHP Annotation";
             block.documentation = "Generate a Swagger-php Annotation from the code snippet below.";
             let range = document.getWordRangeAtPosition(position, /\/\*\* \*\//);
             block.range = range;
-            block.insertText = this.autoDocument(document, position);
+            try {
+                block.insertText = this.autoDocument(document, position);
+            } catch (e) {
+                console.error('[SwaggerPHPAnnotation] autoDocument error:', e);
+                block.insertText = new vscode.SnippetString("/**\n * $0\n */");
+            }
             result.push(block);
             return result;
         }
@@ -48,6 +55,7 @@ export default class Completions implements vscode.CompletionItemProvider
                 item.insertText = new vscode.SnippetString(snippet);
                 item.commitCharacters = ['('];
                 item.documentation = 'Press `(` to get Swagger-php template';
+                result.push(item);
             });
 
             return result;

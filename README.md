@@ -1,4 +1,8 @@
-# swagger-php-annotation README
+# swagger-php-annotation
+
+[![Version](https://img.shields.io/visual-studio-marketplace/v/qvtec3.swagger-php-annotation)](https://marketplace.visualstudio.com/items?itemName=qvtec3.swagger-php-annotation)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/qvtec3.swagger-php-annotation)](https://marketplace.visualstudio.com/items?itemName=qvtec3.swagger-php-annotation)
+[![Rating](https://img.shields.io/visual-studio-marketplace/r/qvtec3.swagger-php-annotation)](https://marketplace.visualstudio.com/items?itemName=qvtec3.swagger-php-annotation)
 
 Swagger-PHP v3.x Annotation extension.
 
@@ -51,10 +55,4 @@ This extension has no dependencies.
 }
 ```
 
-### 1.0.0
-
-Initial release.
-
-### 1.1.1
-
-fix indent
+See [CHANGELOG](CHANGELOG.md) for release history.
